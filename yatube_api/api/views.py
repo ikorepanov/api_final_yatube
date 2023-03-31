@@ -1,6 +1,5 @@
 from django.core.exceptions import PermissionDenied
 from django.shortcuts import get_object_or_404
-from django_filters.rest_framework import DjangoFilterBackend
 from posts.models import Follow, Group, Post, User
 from rest_framework import filters, mixins, permissions, status, viewsets
 from rest_framework.pagination import LimitOffsetPagination
@@ -81,7 +80,7 @@ class FollowViewSet(CreateRetrieveViewSet):
     serializer_class = FollowSerializer
     # permission_classes = [IsAuthorOrReadOnly, ]
     permission_classes = [IsAuthorOrReadOnly, permissions.IsAuthenticated, ]
-    filter_backends = (DjangoFilterBackend, filters.SearchFilter)
+    filter_backends = (filters.SearchFilter, )
     search_fields = ('=user__username', '=following__username')
 
     def perform_create(self, serializer):
