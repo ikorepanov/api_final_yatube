@@ -9,8 +9,6 @@ from .permissions import IsAuthorOrReadOnly
 from .serializers import (CommentSerializer, FollowSerializer, GroupSerializer,
                           PostSerializer, UserSerializer)
 
-from django.db.models import Q
-
 
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
