@@ -15,7 +15,7 @@ router.register(r'v1/posts/(?P<post_id>\d+)/'
                 CommentViewSet, basename='some')
 router.register(r'v1/groups/(?P<group_id>\d+)',
                 GroupViewSet, basename='group')
-router.register(r'v1/follow', FollowViewSet)
+router.register(r'v1/follow', FollowViewSet, basename='follow')
 router.register(r'v1/users', UserViewSet)
 
 urlpatterns = [

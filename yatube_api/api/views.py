@@ -9,6 +9,8 @@ from .permissions import IsAuthorOrReadOnly
 from .serializers import (CommentSerializer, FollowSerializer, GroupSerializer,
                           PostSerializer, UserSerializer)
 
+from django.db.models import Q
+
 
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
@@ -76,15 +78,10 @@ class CreateRetrieveViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
 
 
 class FollowViewSet(CreateRetrieveViewSet):
-    queryset = Follow.objects.all()
     serializer_class = FollowSerializer
     permission_classes = [IsAuthorOrReadOnly, permissions.IsAuthenticated, ]
     filter_backends = (filters.SearchFilter, )
     search_fields = ('=user__username', '=following__username')
-
-# Для того, чтобы понять - воспользовался вот этой ссылкой:
-# https://www.django-rest-framework.org/api-guide/filtering/#filtering-against-the-current-user
-# Но, при удалении qureyset - валятся тесты...
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
