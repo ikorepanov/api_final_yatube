@@ -9,21 +9,10 @@ from posts.models import Comment, Post
 
 
 class UserSerializer(serializers.ModelSerializer):
-    # follower = serializers.SlugRelatedField(
-    #     many=True,
-    #     read_only=True,
-    #     slug_field='user'
-    # )
-    # following = serializers.SlugRelatedField(
-    #     many=True,
-    #     read_only=True,
-    #     slug_field='following'
-    # )
 
     class Meta:
         model = User
         fields = ('username',)
-        # fields = ('username', 'follower', 'following')
         ref_name = 'ReadOnlyUsers'
 
 
@@ -39,7 +28,6 @@ class Base64ImageField(serializers.ImageField):
 class PostSerializer(serializers.ModelSerializer):
     author = SlugRelatedField(slug_field='username', read_only=True)
     image = Base64ImageField(required=False, allow_null=True)
-    # image = Base64ImageField(max_length=None, use_url=True)
 
     class Meta:
         fields = '__all__'
