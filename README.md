@@ -91,4 +91,4 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-### Автор: Илья Корепанов, ikorepanov@gmail.com, https://t.me/number_one_lobster
+### Автор: Илья Корепанов, ikorepanov.study@gmail.com, https://t.me/number_one_lobster
