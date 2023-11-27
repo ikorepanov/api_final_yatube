@@ -1,3 +1,5 @@
+![Sprint 9](https://github.com/ikorepanov/api_final_yatube/assets/108400524/ab4635c6-e555-4034-8dc4-b65051904d19)
+
 # API_FINAL_YATUBE
 ## Учебный проект на курсе Python-разработчик Яндекс-Практикума (9 српинт)
 
