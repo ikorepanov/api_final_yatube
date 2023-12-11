@@ -1,3 +1,5 @@
+![Sprint 9](https://github.com/ikorepanov/api_final_yatube/assets/108400524/ab4635c6-e555-4034-8dc4-b65051904d19)
+
 # API_FINAL_YATUBE
 ## Учебный проект на курсе Python-разработчик Яндекс-Практикума (9 српинт)
 
@@ -91,4 +93,4 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-### Автор: Илья Корепанов, ikorepanov@gmail.com, https://t.me/number_one_lobster
+### Автор: Илья Корепанов, ikorepanov.study@gmail.com, https://t.me/number_one_lobster
